@@ -54,13 +54,10 @@ public final class MonetaryFormat {
     /** Standard format for fiat amounts. */
     public static final MonetaryFormat FIAT = new MonetaryFormat().shift(0).minDecimals(2).repeatOptionalDecimals(2, 1);
     /** Currency code for base 1 Bitcoin. */
-    public static final String CODE_BTC = "BTC";
-    /** Currency code for base 1/1000 Bitcoin. */
-    public static final String CODE_MBTC = "mBTC";
-    /** Currency code for base 1/1000000 Bitcoin. */
-    public static final String CODE_UBTC = "µBTC";
-
-    public static final int MAX_DECIMALS = 8;
+    public static final String CODE_BTC = "USD";
+    /** Currency code for base 1/100 Bitcoin. */
+   
+    public static final int MAX_DECIMALS = 2;
 
     private final char negativeSign;
     private final char positiveSign;
@@ -74,7 +71,7 @@ public final class MonetaryFormat {
     private final char codeSeparator;
     private final boolean codePrefixed;
 
-    private static final String DECIMALS_PADDING = "0000000000000000"; // a few more than necessary for Bitcoin
+    private static final String DECIMALS_PADDING = "00"; // a few more than necessary for Bitcoin
 
     /**
      * Set character to prefix negative values.
